@@ -55,4 +55,4 @@ gem 'httparty', '~> 0.18.1'
 # Authentication
 # gem 'devise', '~> 4.8'
 gem 'devise_token_auth'
-
+gem 'rack-cors'
