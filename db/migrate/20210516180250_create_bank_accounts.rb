@@ -7,5 +7,7 @@ class CreateBankAccounts < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+
+    add_index :bank_accounts, [:user_id, :currency_id], unique: true
   end
 end

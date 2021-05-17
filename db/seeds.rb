@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-currencies = ENV['CURRENCY'].split(', ')
+currencies = ['EUR', 'USD', 'ARS', 'UYU']
 
 currencies.each do |currency|
-  Currency.find_or_create_by(name: currency, last_value: 0)
+  Currency.find_or_create_by(name: currency.upcase)
 end
