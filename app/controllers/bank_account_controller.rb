@@ -1,6 +1,6 @@
 class BankAccountController < ApplicationController
   include BankAccountHelper
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def transferir
     account_from = BankAccount.find(params[:account_from].to_i)
