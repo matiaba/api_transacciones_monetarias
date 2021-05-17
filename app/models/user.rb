@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   include DeviseTokenAuth::Concerns::User
   has_many :bank_accounts
+  has_many :transactions
+  validates_associated :bank_accounts, :transactions
 end
