@@ -18,7 +18,7 @@ class BankAccountController < ApplicationController
       transaction.save
       render json: { message: "Transfer completed.", bank_account: account_from, bank_destiny_account: account_to}
     else
-      render json: {error: transaction.errors, error: update_bank_account.errors}
+      render json: {error: transaction.errors, error2: update_bank_account.errors}
     end
   end
 

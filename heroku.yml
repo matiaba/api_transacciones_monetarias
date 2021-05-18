@@ -1,0 +1,2 @@
+run:
+  web: bundle exec bundle install && rake db:migrate && rake db:seed && bundle exec bin/rails s -p $PORT
