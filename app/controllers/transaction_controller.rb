@@ -7,6 +7,6 @@ class TransactionController < ApplicationController
     start_date = params[:start_date].nil? ? first_record.created_at : params[:start_date]
     end_date = params[:end_date].nil? ? last_record.created_at : params[:end_date]
     transactions = Transaction.own_transactions(current_user.id, start_date, end_date)
-    render json: {transactions: transactions}
+    render json: transactions.empty? ? {transactions: "there isn't any"} : {transactions: transactions}
   end
 end
