@@ -37,4 +37,4 @@ The previous steps are for Heroku as well but the endpoint from the url is https
 
 ## API FIXER.IO
 
-* To fetch currencies values to have to run ```heroku run rake fetch_currencies:hourly```
+* To fetch currencies values you have to run ```heroku run rake fetch_currencies:hourly```
