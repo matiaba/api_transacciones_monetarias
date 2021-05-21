@@ -16,6 +16,7 @@ class BankAccountController < ApplicationController
       account_from.update(cash: new_amount_from)
       account_to.update(cash: new_amount_to)
       transaction.save
+      transaction_income_record(account_from, account_to, amount, description, send_amount)
       render json: { message: "Transfer completed.", bank_account: account_from, bank_destiny_account: account_to}
     else
       render json: {error: transaction.errors, error2: update_bank_account.errors}
@@ -25,6 +26,10 @@ class BankAccountController < ApplicationController
   def transaction_record(origin_bank, destiny_bank, cash, description, cash_converted, current_user)
     Transaction.new(account_from: origin_bank.id, account_to: destiny_bank.id, amount: cash,
                        description: description, amount_converted: cash_converted, user_id: current_user.id)
+  end
+
+  def transaction_income_record(origin_bank, destiny_bank, cash, description, cash_converted)
+    Transaction.create(account_from: origin_bank.id, account_to: destiny_bank.id, amount: cash, description: description, amount_converted: cash_converted, user_id: destiny_bank.id, income: true)
   end
 
 end
