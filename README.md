@@ -35,6 +35,10 @@ To see all transactions one user did you need to log in before you can see the t
 
 The previous steps are for Heroku as well but the endpoint from the url is https://api-transacciones-bancarias.herokuapp.com instead of localhost. If you need to use the console use ```heroku run rails console``` on the terminal from project cloned.
 
+## SEED
+
+The seed is already loaded with the currencies above. ```['EUR', 'USD', 'ARS', 'UYU']```. So use the console to create new ones.
+
 ## API FIXER.IO
 
-* To fetch currencies values to have to run ```heroku run rake fetch_currencies:hourly```
+* To fetch currencies values you have to run ```heroku run rake fetch_currencies:hourly```
